@@ -4,14 +4,57 @@
     box-sizing: border-box;
 }
 :root {
-    --color-bg: linear-gradient(23deg, rgba(255, 0, 134, 1) 9%, rgba(0, 188, 212, 1) 51%, rgba(26, 8, 26, 1) 77%);
+    --color-bg: linear-gradient(-23deg, rgba(255, 0, 134, 1) 9%, rgba(0, 188, 212, 1) 51%, rgba(26, 8, 26, 1) 67%) no-repeat;
+}
+
+@-webkit-keyframes focus-in-expand {
+    0% {
+      letter-spacing: -0.5em;
+      -webkit-filter: blur(12px);
+              filter: blur(12px);
+      opacity: 0;
+    }
+    100% {
+      -webkit-filter: blur(0px);
+              filter: blur(0px);
+      opacity: 1;
+    }
+}
+@keyframes focus-in-expand {
+    0% {
+      letter-spacing: -0.5em;
+      -webkit-filter: blur(12px);
+              filter: blur(12px);
+      opacity: 0;
+    }
+    100% {
+      -webkit-filter: blur(0px);
+              filter: blur(0px);
+      opacity: 1;
+    }
+}
+  
+.focus-in-expand {
+	-webkit-animation: focus-in-expand 0.8s cubic-bezier(0.250, 0.460, 0.450, 0.940) both;
+    animation: focus-in-expand 0.8s cubic-bezier(0.250, 0.460, 0.450, 0.940) both;
+}
+@keyframes gradient {
+    from {
+        background-position: 0% 50%;
+    } to {
+        background-position: 100% 50%;
+    }
 }
 
 Body {
     width: 100%;
-    height: 100vh;
-    background: var(--color-bg);
-}
+    height: 100%;
+    min-height: 100vh;
+    background: url(../Image/fundoProgramador1.gif);
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+}  
 
 .header {
     display: flex;
@@ -22,16 +65,25 @@ Body {
     flex-wrap: nowrap;
 }
 
-.left {
+.header__left {
     display: flex;
     width: 40%;
     max-width: 100%;
     height: 100%;
-    flex-direction: column;
+    flex-direction: row;
     align-items: flex-start;
+    padding: 10px;
+}
+.header__left img {
+    width: 50px;
+    aspect-ratio: 3/2;
+    object-fit: contain;
+    display: flex;
+    margin-top: 15px;
+    margin-right: 10px;
 }
 
-.right {
+.header__right {
     display: flex;
     flex: 1;
     width: 60%;
@@ -39,7 +91,7 @@ Body {
     height: 100%;
 }
 
-.right ul {
+.header__right ul {
     display: flex;
     flex: 1;
     width: 100%;
@@ -47,16 +99,20 @@ Body {
     align-self: center;
     justify-content: space-between;
     list-style: none;
-    border-bottom: 3px solid yellow;
     margin-right: 30px;
 }
 
-.right li {
+.header__right li {
     font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
     font-weight: bold;
-    color: #FFF;
+    color: #fff;
     padding: 0.5rem;
     margin: auto;
     font-size: 1.5rem;
-    -webkit-text-stroke: 0.7px yellow;
+}
+.header__right li:hover {
+    padding-bottom: 15px;
+    cursor: pointer;
+    text-decoration: underline;
+    color: rgb(185, 187, 165);
 }
