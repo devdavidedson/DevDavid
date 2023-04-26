@@ -225,6 +225,13 @@ Body {
 
 /* Aprendizado */
 
+#abbout {
+    color: white;
+    font-size: 3rem;
+    text-align: center;
+    margin-top: 50px;
+}
+
 .about__container {
     display: flex;
     flex-direction: row;
@@ -235,9 +242,11 @@ Body {
 }
 .about__container-left {
     display: flex;
+    flex-direction: column;
     width: 40%;
     height: 100%;
     max-width: 1028px;
+    color: royalblue;
 }
 .about__container-left img {
     width: 50%;
@@ -247,24 +256,21 @@ Body {
 
 .about__container-right {
     display: grid;
-    grid-template-columns: 100px 50px 100px;
-    grid-template-rows: 80px auto 80px; 
-    column-gap: 10px;
-    row-gap: 15px;
+    grid-template-columns: 20% 20%;
+    grid-template-rows: 160px 160px;
+    margin: auto;
+    justify-content: space-evenly;
+    align-items: center;
+    padding: 30px;
     width: 60%;
     flex: 1;
-    color: #fff;
-    border: 1px solid white;
-    padding: 50px;
-    justify-content: space-evenly;
 }
 
 .about__container-right img {
-    margin: 30px;
+    margin: 50px;
     max-width: 100%; /*nova propriedade*/
-    height: auto; /*nova propriedade*/
-    object-fit: cover; /*nova propriedade*/
 }
+
 
 /* RODAPÉ */
 
